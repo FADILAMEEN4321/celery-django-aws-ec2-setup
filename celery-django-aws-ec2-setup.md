@@ -18,6 +18,9 @@ This guide walks you through the process of setting up Celery for a Django appli
     # You can give any name for your_project_name. Dont need any relation with django project name.
 
 Add the following content to the file and save:
+Replace your_user with your users name
+Replace your_virtualenv with path to your virtualenv 
+Replace your_django_app with your django app name where celery.py exists
 
 
     # Name of nodes to start
@@ -27,7 +30,7 @@ Add the following content to the file and save:
     CELERY_BIN="/home/your_user/your_virtualenv/bin/celery"
 
     # App instance to use
-    CELERY_APP="your_django_project.celery:app"
+    CELERY_APP="your_django_app.celery:app"
 
     # How to call manage.py
     CELERYD_MULTI="multi"
@@ -53,6 +56,8 @@ Add the following content to the file and save:
 
 
 Add the following content to the file and save:
+Replace your_user with your users name
+Replace your_django_project with your django project directory name.
 
 
     [Unit]

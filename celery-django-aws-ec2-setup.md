@@ -88,6 +88,7 @@ Add the following content to the file and save:
 
     # Adjust ownership of the log directory
     sudo chown -R your_user:your_group /var/log/celery
+    
     #Replace your_user and your_group with the appropriate values. You can find your user and group with the id command:
     id
 
@@ -97,10 +98,13 @@ Add the following content to the file and save:
 
     # Reload systemd configuration
     sudo systemctl daemon-reload
+
     # Enable the Celery service
     sudo systemctl enable celery-your_project_name
+
     # Restart the Celery service
     sudo systemctl restart celery-your_project_name
+
     # Check the status of the Celery service
     sudo systemctl status celery-your_project_name
 

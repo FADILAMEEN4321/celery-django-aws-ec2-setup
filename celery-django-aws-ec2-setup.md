@@ -4,11 +4,13 @@ This guide walks you through the process of setting up Celery for a Django appli
 
 **Step 1: Create /etc/default/celeryd if it doesn't exist**
     ```bash
+    
     # Create the directory if it doesn't exist
     sudo mkdir -p /etc/default/celeryd
 
 **Step 2: Create the Celery configuration file**
     ```bash
+
     # Open the configuration file for editing
     sudo nano /etc/default/celeryd/your_project_name
     # You can give any name for your_project_name. Dont need any relation with django project name.
@@ -35,7 +37,7 @@ Add the following content to the file and save:
     CELERYD_PID_FILE="/var/run/celery/%n.pid"
     CELERYD_LOG_FILE="/var/log/celery/%n%I.log"
     CELERYD_LOG_LEVEL="INFO"
-    
+
     # Celery Beat options
     CELERYBEAT_PID_FILE="/var/run/celery/beat.pid"
     CELERYBEAT_LOG_FILE="/var/log/celery/beat.log"
@@ -43,6 +45,7 @@ Add the following content to the file and save:
 
 **Step 3: Create the systemd service file**
     ```bash
+
     # Open the systemd service file for editing
     sudo nano /etc/systemd/system/celery-your_project_name.service
 
@@ -75,12 +78,14 @@ Add the following content to the file and save:
 
 **Step 4: Create the log directory**
     ```bash
+
     # Create the log directory
     sudo mkdir -p /var/log/celery
 
 
 **Step 5: Adjust ownership of the directory**
     ```bash
+
     # Adjust ownership of the log directory
     sudo chown -R your_user:your_group /var/log/celery
     #Replace your_user and your_group with the appropriate values. You can find your user and group with the id command:
@@ -89,6 +94,7 @@ Add the following content to the file and save:
 
 **Step 6: Restart the server**
     ```bash
+
     # Reload systemd configuration
     sudo systemctl daemon-reload
     # Enable the Celery service

@@ -11,7 +11,6 @@ This guide walks you through the process of setting up Celery for a Django appli
 **Step 2: Create the Celery configuration file**
 
 
-    # Open the configuration file for editing
     sudo nano /etc/default/celeryd/your_project_name
 
 

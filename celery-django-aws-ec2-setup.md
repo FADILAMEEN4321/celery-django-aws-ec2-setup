@@ -2,7 +2,7 @@
 
 This guide walks you through the process of setting up Celery for a Django application on an AWS EC2 instance running Ubuntu. Celery is a distributed task queue that helps you execute tasks asynchronously, making it a useful tool for handling background processes.
 
-**Step 1: Create /etc/default/celeryd if it doesn't exist**
+**Step 1: Create /etc/default/celeryd directory if it doesn't exist**
 
 
     # Create the directory if it doesn't exist
@@ -13,6 +13,8 @@ This guide walks you through the process of setting up Celery for a Django appli
 
     # Open the configuration file for editing
     sudo nano /etc/default/celeryd/your_project_name
+
+
     # You can give any name for your_project_name. Dont need any relation with django project name.
 
 Add the following content to the file and save:
@@ -88,7 +90,7 @@ Add the following content to the file and save:
 
     # Adjust ownership of the log directory
     sudo chown -R your_user:your_group /var/log/celery
-    
+
     #Replace your_user and your_group with the appropriate values. You can find your user and group with the id command:
     id
 
